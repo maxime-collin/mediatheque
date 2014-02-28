@@ -10,6 +10,7 @@ public class Media {
 	private String auteur;
 	private String resume;
 	private int duree;
+	private boolean disponible;
 
 	
 	public Media(scolarite.Cours c, Genre g, int i, String n, String a, String r, int d) {
@@ -21,6 +22,8 @@ public class Media {
 		auteur = a;
 		resume = r;
 		duree = d;
+		disponible = true;
+		
 	}
 
 
@@ -91,5 +94,15 @@ public class Media {
 
 	public void setAuteur(String auteur) {
 		this.auteur = auteur;
+	}
+
+
+	public boolean isDisponible() {
+		return disponible;
+	}
+
+
+	public void setDisponible(boolean disponible) {
+		this.disponible = disponible;
 	}
 }

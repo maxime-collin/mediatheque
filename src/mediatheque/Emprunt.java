@@ -12,12 +12,12 @@ public class Emprunt {
 	private Date dateEmprunt;
 	private Date dateRetour;
 	
-	public Emprunt(utilisateurs.Utilisateur e, medias.Media m, int n, String c, Date de, Date dr) {
+	public Emprunt(utilisateurs.Utilisateur e, medias.Media m, Date de, Date dr) {
 		emprunteur = e;
 		media = m;
 		
-		note = n;
-		commentaire = c;
+		note = -1;
+		commentaire = null;
 		dateEmprunt = de;
 		dateRetour = dr;
 	}

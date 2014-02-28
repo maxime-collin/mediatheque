@@ -1,6 +1,7 @@
 package utilisateurs;
 
 import java.util.ArrayList;
+import java.util.Date;
 
 public abstract class Utilisateur {
 	
@@ -13,14 +14,16 @@ public abstract class Utilisateur {
 	private String type;
 	private int nbEmpruntMax;
 	private int nbEmpruntNonCommente;
+	private int nbEmpruntEnCours;
 	
-	public Utilisateur(int i, String n, String p, String t, int nbEM, int nbENC) {
+	public Utilisateur(int i, String n, String p, String t, int nbEM) {
 		id = i;
 		nom = n;
 		prenom = p;
 		type = t;
 		nbEmpruntMax = nbEM;
-		nbEmpruntNonCommente = nbENC;
+		nbEmpruntNonCommente = 0;
+		nbEmpruntEnCours = 0;
 	}
 	
 	public ArrayList<scolarite.Cours> getCours() {
@@ -63,7 +66,11 @@ public abstract class Utilisateur {
 		this.type = type;
 	}
 	
-	public abstract void emprunter(medias.Media media);
+	public abstract int emprunter(medias.Media media);
+	
+	public abstract int emprunter(medias.Media media, int nbjour);
+	
+	protected abstract int eligibilite(medias.Media media);
 
 	public int getNbEmpruntMax() {
 		return nbEmpruntMax;
@@ -88,5 +95,35 @@ public abstract class Utilisateur {
 	public void setEmprunts(ArrayList<mediatheque.Emprunt> emprunts) {
 		this.emprunts = emprunts;
 	}
+
+	public int getNbEmpruntEnCours() {
+		return nbEmpruntEnCours;
+	}
+
+	public void setNbEmpruntEnCours(int nbEmpruntEnCours) {
+		this.nbEmpruntEnCours = nbEmpruntEnCours;
+	}
+	
+	public void incrementerNbEmpruntEnCours(){
+		this.nbEmpruntEnCours ++;
+	}
+	
+	public void decrementerNbEmpruntEnCours(){
+		this.nbEmpruntEnCours --;
+	}
+	
+	public void incrementerNbEmpruntNonCommente(){
+		this.nbEmpruntNonCommente ++;
+	}
+	
+	public void decrementerNbEmpruntNonCommente(){
+		this.nbEmpruntNonCommente --;
+	}
+	
+	public void addEmprunts(mediatheque.Emprunt emprunt)
+	{
+		this.emprunts.add(emprunt);
+	}
+	
 
 }

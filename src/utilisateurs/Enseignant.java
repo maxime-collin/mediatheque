@@ -1,16 +1,41 @@
 package utilisateurs;
 
+import medias.Media;
+
 public class Enseignant extends Utilisateur {
 
-	public Enseignant(int i, String n, String p, String t, int nbEM, int nbENC) {
-		super(i, n, p, t, nbEM, nbENC);
+	public Enseignant(int i, String n, String p, String t, int nbEM) {
+		super(i, n, p, t, nbEM);
+	}
+
+	@Override
+	public int emprunter(Media media) {
+		
+		
+		
+		return 1;
+	}
+
+	@Override
+	public int emprunter(Media media, int nbjour) {
+		return emprunter(media);
+	}
+
+	@Override
+	protected int eligibilite(Media media) {
+		// Si le nombre d'emprunt en cours est au max
+		if(this.getNbEmpruntEnCours() == this.getNbEmpruntMax())
+		{
+			return 2;
+		} 
+		else if(media.isDisponible() == false)
+		{
+			return 4;
+		}
+		
+		return 1;
 	}
 	
 
-	@Override
-	public void emprunter(medias.Media media) {
-		// TODO Auto-generated method stub
-		
-	}
 
 }
