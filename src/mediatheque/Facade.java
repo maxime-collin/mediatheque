@@ -92,11 +92,13 @@ public interface Facade {
 	
 	public Boolean removeProject(int idProject);
 	
-	public Boolean addEtudiant(int idEtudiant);
+	public String getProject();
 	
-	public String getEtudiant();
+	public String getProject(int idProject);
 	
-	public String getEtudiant(int idEtudiant);
+	public Boolean addEtudiantProject(int idEtudiant, int idProject);
+	
+	public Boolean removeEtudiantProject(int idEtudiant, int idProject);
 	
 	
 	public Boolean addStage(int idProject, int i, String n, Date dd, Date df);
