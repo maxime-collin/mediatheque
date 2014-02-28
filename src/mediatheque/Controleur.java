@@ -75,7 +75,7 @@ public class Controleur implements Facade {
 	}
 
 	@Override
-	public String getUsers() {
+	public String getUser(int idUser) {
 		return null;
 	}
 
@@ -254,6 +254,11 @@ public class Controleur implements Facade {
 
 	@Override
 	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr) {
+		return null;
+	}
+	
+	@Override
+	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr, int nbJours) {
 		return null;
 	}
 

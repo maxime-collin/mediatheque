@@ -35,7 +35,7 @@ public interface Facade {
 	
 	public String getUser();
 	
-	public String getUsers();
+	public String getUser(int idUser);
 		
 	
 	public Boolean addAdmin(int idAdmin, String n, String p);
@@ -113,6 +113,8 @@ public interface Facade {
 	
 	
 	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr);
+	
+	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr, int nbJours);
 	
 	public Boolean commenter(int idUser, int idMedia, int n, String c);
 	
