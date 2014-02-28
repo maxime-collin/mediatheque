@@ -2,43 +2,116 @@ package mediatheque;
 
 import java.util.Date;
 
-import scolarite.Cycle;
-import scolarite.Matiere;
-import medias.Genre;
-
 public interface Facade {
 
 	
-	public void addMedia(scolarite.Cours c, Genre g, int i, String n, String a, String r, int d);
+	public Boolean addMedia(int idCours, int idGenre, int idMedia, String n, String a, String r, int d);
 	
-	public void setMedia(int i, scolarite.Cours c, Genre g, String n, String a, String r, int d);
+	public Boolean setMedia(int idCours, int idGenre, int idMedia, String n, String a, String r, int d);
 	
-	public void removeMedia(int id);
+	public Boolean removeMedia(int idMedia);
 	
+	public String getMedia();
 	
-	public void addGenre(int i, String n, int de);
-	
-	public void setGenre(int i, String n, int de);
-	
-	public void removeGenre(int id);
+	public String getMedia(int idMedia);
 	
 		
+	public Boolean addGenre(int idGenre, String n, int de);
 	
-	public void addUser(int i, String n, String p, String t, int nbEM, int nbENC);
+	public Boolean setGenre(int idGenre, String n, int de);
 	
-	public void setUser(int i, String n, String p, String t, int nbEM, int nbENC);
+	public Boolean removeGenre(int idGenre);
 	
-	public void removeUser(int id);
+	public String getGenre();
 	
-	
-	public void addAdmin(int i, String n, String p);
-	
-	public void setAdmin(int i, String n, String p);
-	
-	public void removeAdmin(int id);
+	public String getGenre(int idGenre);
 	
 	
-	public void addCours(Cycle c, Matiere m, utilisateurs.Enseignant p, int i, String n);
+	public Boolean addUser(int idUser, String n, String p, String t, int nbEM, int nbENC);
 	
-	public void 
+	public Boolean setUser(int idUser, String n, String p, String t, int nbEM, int nbENC);
+	
+	public Boolean removeUser(int idUser);
+	
+	public String getUser();
+	
+	public String getUsers();
+		
+	
+	public Boolean addAdmin(int idAdmin, String n, String p);
+	
+	public Boolean setAdmin(int idAdmin, String n, String p);
+	
+	public Boolean removeAdmin(int idAdmin);
+	
+	public String getAdmin();
+	
+	public String getAdmin(int idAdmin);
+	
+	
+	public Boolean addCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n);
+	
+	public Boolean setCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n);
+	
+	public Boolean removeCours(int idCours);
+	
+	public String getCours();
+	
+	public String getCours(int idCours);
+	
+	public Boolean inscrireUserCours(int idUser, int idCours);
+	
+	public Boolean desinscrireUserCours(int idUser, int idCours);
+	
+	
+	public Boolean addCycle(int idCycle, String n);
+	
+	public Boolean setCycle(int idCycle, String n);
+	
+	public Boolean removeCycle(int idCycle);
+	
+	public String getCycle();
+	
+	public String getCycle(int idCycle);
+	
+	
+	public Boolean addMatiere(int idMatiere, String n);
+	
+	public Boolean setMatiere(int idMatiere, String n);
+	
+	public Boolean removeMatiere(int idMatiere);
+	
+	public String getMatiere();
+	
+	public String getMatiere(int idMatiere);
+	
+	
+	public Boolean addProjet(int idCours, int idProject, String n, String d, Date dd, Date df);
+	
+	public Boolean setProject(int idCours, int idProject, String n, String d, Date dd, Date df);
+	
+	public Boolean removeProject(int idProject);
+	
+	public Boolean addEtudiant(int idEtudiant);
+	
+	public String getEtudiant();
+	
+	public String getEtudiant(int idEtudiant);
+	
+	
+	public Boolean addStage(int idProject, int i, String n, Date dd, Date df);
+	
+	public Boolean setStage(int idProject, int i, String n, Date dd, Date df);
+	
+	public Boolean removeStage(int idStage);
+	
+	public String getStage();
+	
+	public String getStage(int idStage);
+	
+	
+	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr);
+	
+	public Boolean commenter(int idUser, int idMedia, int n, String c);
+	
 }
