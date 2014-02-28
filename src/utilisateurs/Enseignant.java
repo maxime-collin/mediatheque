@@ -2,8 +2,8 @@ package utilisateurs;
 
 public class Enseignant extends Utilisateur {
 
-	public Enseignant(int i, String n, String p) {
-		super(i, n, p);
+	public Enseignant(int i, String n, String p, String t, int nbEM, int nbENC) {
+		super(i, n, p, t, nbEM, nbENC);
 	}
 	
 
