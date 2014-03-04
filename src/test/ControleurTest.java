@@ -2,14 +2,16 @@ package test;
 
 import java.util.Date;
 
-import controleurs.Controleur;
+import mediatheque.Controleur;
 
 
 public class ControleurTest {
 
 	Controleur controleur = new Controleur();
 	
-	
+	//////////////////////////////////////////
+	// 				Media 					//
+	//////////////////////////////////////////
 	public Boolean testAddMedia(int idCours, int idGenre, int idMedia, String n, String a, String r, int d) {
 		Boolean valide = controleur.addMedia(idCours, idGenre, idMedia, n, a, r, d);
 		
@@ -39,8 +41,11 @@ public class ControleurTest {
 		
 		return res;
 	}
+
 	
-		
+	//////////////////////////////////////////
+	//				Genre					//
+	//////////////////////////////////////////	
 	public Boolean testAddGenre(int idGenre, String n, int de) {
 		Boolean valide = controleur.addGenre(idGenre, n, de);
 				
@@ -70,8 +75,11 @@ public class ControleurTest {
 		
 		return res;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				User					//
+	//////////////////////////////////////////
 	public Boolean testAddUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
 		Boolean valide = controleur.addUser(idUser, n, p, t, nbEM, nbENC);
 				
@@ -101,8 +109,11 @@ public class ControleurTest {
 		
 		return res;
 	}
-		
+
 	
+	//////////////////////////////////////////
+	//				Admin					//
+	//////////////////////////////////////////
 	public Boolean testAddAdmin(int idAdmin, String n, String p) {
 		Boolean valide = controleur.addAdmin(idAdmin, n, p);
 				
@@ -132,8 +143,11 @@ public class ControleurTest {
 		
 		return res;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				Cours					//
+	//////////////////////////////////////////
 	public Boolean testAddCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n) {
 		Boolean valide = controleur.addCours(idCycle, idMatiere, idEnseignant, idCours, n);
 				
@@ -175,8 +189,11 @@ public class ControleurTest {
 				
 		return valide;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				Cycle					//
+	//////////////////////////////////////////
 	public Boolean testAddCycle(int idCycle, String n) {
 		Boolean valide = controleur.addCycle(idCycle, n);
 				
@@ -206,8 +223,11 @@ public class ControleurTest {
 			
 		return res;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				Matiere					//
+	//////////////////////////////////////////
 	public Boolean testAddMatiere(int idMatiere, String n) {
 		Boolean valide = controleur.addMatiere(idMatiere, n);
 				
@@ -237,8 +257,11 @@ public class ControleurTest {
 		
 		return res;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				Projet					//
+	//////////////////////////////////////////
 	public Boolean testAddProjet(int idCours, int idProjet, String n, String d, Date dd, Date df) {
 		Boolean valide = controleur.addProjet(idCours, idProjet, n, d, dd, df);
 		
@@ -280,8 +303,11 @@ public class ControleurTest {
 				
 		return valide;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				Stage					//
+	//////////////////////////////////////////
 	public Boolean testAddStage(int idProjet, int i, String n, Date dd, Date df) {
 		Boolean valide = controleur.addStage(idProjet, i, n, dd, df);
 				
@@ -311,8 +337,11 @@ public class ControleurTest {
 		
 		return res;
 	}
+
 	
-	
+	//////////////////////////////////////////
+	//				Emprunt					//
+	//////////////////////////////////////////
 	public Boolean testEmprunter(int idUser, int idMedia, Date de, Date dr) {
 		Boolean valide = controleur.emprunter(idUser, idMedia, de, dr);
 				
@@ -324,7 +353,6 @@ public class ControleurTest {
 				
 		return valide;
 	}
-
 	
 	public Boolean testCommenter(int idUser, int idMedia, int n, String c) {
 		Boolean valide = controleur.commenter(idUser, idMedia, n, c);

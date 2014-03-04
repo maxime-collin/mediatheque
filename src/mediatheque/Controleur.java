@@ -1,9 +1,17 @@
-package controleurs;
+package mediatheque;
 
 import java.util.Date;
 
-import utilisateurs.Utilisateur;
-import mediatheque.Facade;
+import controleurs.ControleurAdmin;
+import controleurs.ControleurCours;
+import controleurs.ControleurCycle;
+import controleurs.ControleurEmprunt;
+import controleurs.ControleurGenre;
+import controleurs.ControleurMatiere;
+import controleurs.ControleurMedia;
+import controleurs.ControleurProjet;
+import controleurs.ControleurStage;
+import controleurs.ControleurUser;
 
 
 public class Controleur implements Facade {
@@ -17,7 +25,11 @@ public class Controleur implements Facade {
 	ControleurMatiere 	controleurMatiere 	= new ControleurMatiere();
 	ControleurProjet 	controleurProjet 	= new ControleurProjet();
 	ControleurStage 	controleurStage 	= new ControleurStage();
+	ControleurEmprunt	controleurEmprunt	= new ControleurEmprunt();
 	
+	//////////////////////////////////////////
+	// 				Media 					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addMedia(int idCours, int idGenre, int idMedia, String n, String a, String r, int d) {
 		return controleurMedia.addMedia(idCours, idGenre, idMedia, n, a, r, d);
@@ -44,6 +56,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Genre					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addGenre(int idGenre, String n, int de) {
 		return controleurGenre.addGenre(idGenre, n, de);
@@ -70,6 +85,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				User					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
 		return controleurUser.addUser(idUser, n, p, t, nbEM, nbENC);
@@ -96,6 +114,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Admin					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addAdmin(int idAdmin, String n, String p) {
 		return controleurAdmin.addAdmin(idAdmin, n, p);
@@ -122,6 +143,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Cours					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n) {
 		return controleurCours.addCours(idCycle, idMatiere, idEnseignant, idCours, n);
@@ -158,6 +182,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Cycle					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addCycle(int idCycle, String n) {
 		return controleurCycle.addCycle(idCycle, n);
@@ -184,6 +211,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Matiere					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addMatiere(int idMatiere, String n) {
 		return controleurMatiere.addMatiere(idMatiere, n);
@@ -210,6 +240,9 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Projet					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addProjet(int idCours, int idProjet, String n, String d,	Date dd, Date df) {
 		return controleurProjet.addProjet(idCours, idProjet, n, d, dd, df);
@@ -246,6 +279,9 @@ public class Controleur implements Facade {
 	}
 	
 
+	//////////////////////////////////////////
+	//				Stage					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean addStage(int idProjet, int idStage, String n, Date dd, Date df) {
 		return controleurStage.addStage(idProjet, idStage, n, dd, df);
@@ -272,19 +308,22 @@ public class Controleur implements Facade {
 	}
 
 	
+	//////////////////////////////////////////
+	//				Emprunt					//
+	//////////////////////////////////////////
 	@Override
 	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr) {
-		return null;
+		return controleurEmprunt.emprunter(idUser, idMedia, de, dr);
 	}
 	
 	@Override
 	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr, int nbJours) {
-		return null;
+		return controleurEmprunt.emprunter(idUser, idMedia, de, dr, nbJours);
 	}
 
 	@Override
 	public Boolean commenter(int idUser, int idMedia, int n, String c) {
-		return null;
+		return controleurEmprunt.commenter(idUser, idMedia, n, c);
 	}
 
 	

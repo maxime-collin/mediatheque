@@ -6,7 +6,7 @@ import java.util.Date;
 public abstract class Utilisateur {
 	
 	protected ArrayList<scolarite.Cours> cours;
-	protected ArrayList<mediatheque.Emprunt> emprunts;
+	protected ArrayList<emprunt.Emprunt> emprunts;
 	
 	private int id;
 	private String nom;
@@ -90,11 +90,11 @@ public abstract class Utilisateur {
 		this.nbEmpruntNonCommente = nbEmpruntNonCommente;
 	}
 
-	public ArrayList<mediatheque.Emprunt> getEmprunts() {
+	public ArrayList<emprunt.Emprunt> getEmprunts() {
 		return emprunts;
 	}
 
-	public void setEmprunts(ArrayList<mediatheque.Emprunt> emprunts) {
+	public void setEmprunts(ArrayList<emprunt.Emprunt> emprunts) {
 		this.emprunts = emprunts;
 	}
 
@@ -122,7 +122,7 @@ public abstract class Utilisateur {
 		this.nbEmpruntNonCommente --;
 	}
 	
-	public void addEmprunts(mediatheque.Emprunt emprunt)
+	public void addEmprunts(emprunt.Emprunt emprunt)
 	{
 		this.emprunts.add(emprunt);
 	}

@@ -1,4 +1,4 @@
-package mediatheque;
+package emprunt;
 
 import java.util.Date;
 

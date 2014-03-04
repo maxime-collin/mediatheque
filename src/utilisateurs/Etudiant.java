@@ -70,7 +70,7 @@ public class Etudiant extends Utilisateur {
 		this.incrementerNbEmpruntEnCours();
 		this.incrementerNbEmpruntNonCommente();
 		
-		this.addEmprunts(new mediatheque.Emprunt(this,media,deb,fin));
+		this.addEmprunts(new emprunt.Emprunt(this,media,deb,fin));
 		media.setDisponible(false);
 	}
 
