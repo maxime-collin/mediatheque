@@ -12,7 +12,6 @@ public class Enseignant extends Utilisateur {
 	public int emprunter(Media media) {
 		
 		
-		
 		return 1;
 	}
 
@@ -35,7 +34,16 @@ public class Enseignant extends Utilisateur {
 		
 		return 1;
 	}
+
+	@Override
+	public int commenter(int idEmprunt, int n, String com) {
+		this.emprunts.get(idEmprunt).setCommentaire(com);
+		this.emprunts.get(idEmprunt).setNote(n);
+		
+		this.decrementerNbEmpruntEnCours();
+		this.emprunts.get(idEmprunt).getMedia().setDisponible(true);
+		
+		return 1;
+	}
 	
-
-
 }

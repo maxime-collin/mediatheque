@@ -129,11 +129,15 @@ public class ControleurUser {
 	}
 
 	public String getUser(int idUser) {
+		return "" + getUtilisateur(idUser);
+	}
+	
+	public Utilisateur getUtilisateur(int idUtilisateur) {
 		// on cherche dans la liste des Etudiants si idUser existe
 		int i = 0;
 		Boolean found = false;
 		while (i < Bdd.listEtudiants.size() && !found) {
-			if (Bdd.listEtudiants.get(i).getId() == idUser)
+			if (Bdd.listEtudiants.get(i).getId() == idUtilisateur)
 				found = true;
 			else
 				i++;
@@ -141,26 +145,25 @@ public class ControleurUser {
 		
 		// si oui, on renvoi l'etudiant
 		if (found)
-			return "" + Bdd.listEtudiants.get(i);
+			return Bdd.listEtudiants.get(i);
 
 		// sinon on cherche dans la liste des enseignants si idUser existe 
 		else {
 			i = 0;
 			while (i < Bdd.listEnseignants.size() && !found) {
-				if (Bdd.listEnseignants.get(i).getId() == idUser)
+				if (Bdd.listEnseignants.get(i).getId() == idUtilisateur)
 					found = true;
 				else
 					i++;
 			}
 			
-			// si oui on supprime l'enseignant
+			// si oui on renvoi l'enseignant
 			if (found == true)
-				return "" + Bdd.listEnseignants.get(i);
+				return Bdd.listEnseignants.get(i);
 
 			// sinon : echec
 			else
-				return "";
+				return null;
 		}
 	}
-	
 }

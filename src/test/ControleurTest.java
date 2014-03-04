@@ -239,57 +239,57 @@ public class ControleurTest {
 	}
 	
 	
-	public Boolean testAddProjet(int idCours, int idProject, String n, String d, Date dd, Date df) {
-		Boolean valide = controleur.addProjet(idCours, idProject, n, d, dd, df);
+	public Boolean testAddProjet(int idCours, int idProjet, String n, String d, Date dd, Date df) {
+		Boolean valide = controleur.addProjet(idCours, idProjet, n, d, dd, df);
 		
 		return valide;
 	}
 	
-	public Boolean testSetProject(int idCours, int idProject, String n, String d, Date dd, Date df) {
-		Boolean valide = controleur.setProject(idCours, idProject, n, d, dd, df);
+	public Boolean testSetProjet(int idCours, int idProjet, String n, String d, Date dd, Date df) {
+		Boolean valide = controleur.setProjet(idCours, idProjet, n, d, dd, df);
 				
 		return valide;
 	}
 	
-	public Boolean testRemoveProject(int idProject) {
-		Boolean valide = controleur.removeProject(idProject);
+	public Boolean testRemoveProjet(int idProjet) {
+		Boolean valide = controleur.removeProjet(idProjet);
 				
 		return valide;
 	}
 	
-	public String testGetProject() {
-		String res = controleur.getProject();
-		
-		return res;
-	}
-	
-	public String testGetProject(int idProject) {
-		String res = controleur.getProject(idProject);
+	public String testGetProjet() {
+		String res = controleur.getProjet();
 		
 		return res;
 	}
 	
-	public Boolean testAddEtudiantProject(int idEtudiant, int idProject) {
-		Boolean valide = controleur.addEtudiantProject(idEtudiant, idProject);
+	public String testGetProjet(int idProjet) {
+		String res = controleur.getProjet(idProjet);
+		
+		return res;
+	}
+	
+	public Boolean testAddEtudiantProjet(int idEtudiant, int idProjet) {
+		Boolean valide = controleur.addEtudiantProjet(idEtudiant, idProjet);
 				
 		return valide;
 	}
 	
-	public Boolean testRemoveEtudiantProject(int idEtudiant, int idProject) {
-		Boolean valide = controleur.removeEtudiantProject(idEtudiant, idProject);
+	public Boolean testRemoveEtudiantProjet(int idEtudiant, int idProjet) {
+		Boolean valide = controleur.removeEtudiantProjet(idEtudiant, idProjet);
 				
 		return valide;
 	}
 	
 	
-	public Boolean testAddStage(int idProject, int i, String n, Date dd, Date df) {
-		Boolean valide = controleur.addStage(idProject, i, n, dd, df);
+	public Boolean testAddStage(int idProjet, int i, String n, Date dd, Date df) {
+		Boolean valide = controleur.addStage(idProjet, i, n, dd, df);
 				
 		return valide;
 	}
 	
-	public Boolean testSetStage(int idProject, int i, String n, Date dd, Date df) {
-		Boolean valide = controleur.setStage(idProject, i, n, dd, df);
+	public Boolean testSetStage(int idProjet, int i, String n, Date dd, Date df) {
+		Boolean valide = controleur.setStage(idProjet, i, n, dd, df);
 				
 		return valide;
 	}
@@ -418,19 +418,19 @@ public class ControleurTest {
 		
 		System.out.println(displayFunctionTest("getMatiere(int idMatiere)") + testeur.testGetMatiere(0) );
 		
-		System.out.println(displayFunctionTest("addProject") + testeur.testAddProjet(0, 0, null, null, null, null) );
+		System.out.println(displayFunctionTest("addProjet") + testeur.testAddProjet(0, 0, null, null, null, null) );
 		
-		System.out.println(displayFunctionTest("setProject") + testeur.testSetProject(0, 0, null, null, null, null) );
+		System.out.println(displayFunctionTest("setProjet") + testeur.testSetProjet(0, 0, null, null, null, null) );
 		
-		System.out.println(displayFunctionTest("removeProject") + testeur.testRemoveProject(0) );
+		System.out.println(displayFunctionTest("removeProjet") + testeur.testRemoveProjet(0) );
 		
-		System.out.println(displayFunctionTest("getProject") + testeur.testGetProject() );
+		System.out.println(displayFunctionTest("getProjet") + testeur.testGetProjet() );
 		
-		System.out.println(displayFunctionTest("getProject(int idProject)") + testeur.testGetProject(0) );
+		System.out.println(displayFunctionTest("getProjet(int idProjet)") + testeur.testGetProjet(0) );
 		
-		System.out.println(displayFunctionTest("addEtudiantProject") + testeur.testAddEtudiantProject(0, 0) );
+		System.out.println(displayFunctionTest("addEtudiantProjet") + testeur.testAddEtudiantProjet(0, 0) );
 		
-		System.out.println(displayFunctionTest("removeEtudiantProject") + testeur.testRemoveEtudiantProject(0, 0) );
+		System.out.println(displayFunctionTest("removeEtudiantProjet") + testeur.testRemoveEtudiantProjet(0, 0) );
 		
 		System.out.println(displayFunctionTest("addStage") + testeur.testAddStage(0, 0, null, null, null) );
 		

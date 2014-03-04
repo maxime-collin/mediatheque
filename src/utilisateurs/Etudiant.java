@@ -1,10 +1,7 @@
 package utilisateurs;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
-import java.util.GregorianCalendar;
 
 import medias.Media;
 
@@ -15,7 +12,7 @@ public class Etudiant extends Utilisateur {
 	}
 
 	@Override
-	public int emprunter(medias.Media media) {
+	public int emprunter(Media media) {
 		
 		int valeurEligible = eligibilite(media);
 		
@@ -40,8 +37,6 @@ public class Etudiant extends Utilisateur {
 			return valeurEligible;
 		}		
 	}
-	
-	
 
 	@Override
 	public int emprunter(Media media, int nbJour) {
@@ -76,7 +71,7 @@ public class Etudiant extends Utilisateur {
 		this.incrementerNbEmpruntNonCommente();
 		
 		this.addEmprunts(new mediatheque.Emprunt(this,media,deb,fin));
-		
+		media.setDisponible(false);
 	}
 
 	@Override
@@ -94,6 +89,18 @@ public class Etudiant extends Utilisateur {
 		{
 			return 4;
 		}
+		
+		return 1;
+	}
+
+	@Override
+	public int commenter(int idEmprunt, int n, String com) {
+		this.emprunts.get(idEmprunt).setCommentaire(com);
+		this.emprunts.get(idEmprunt).setNote(n);
+		
+		this.decrementerNbEmpruntEnCours();
+		this.decrementerNbEmpruntNonCommente();
+		this.emprunts.get(idEmprunt).getMedia().setDisponible(true);
 		
 		return 1;
 	}

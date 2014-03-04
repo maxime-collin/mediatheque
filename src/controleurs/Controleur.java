@@ -98,179 +98,177 @@ public class Controleur implements Facade {
 	
 	@Override
 	public Boolean addAdmin(int idAdmin, String n, String p) {
-		return null;
+		return controleurAdmin.addAdmin(idAdmin, n, p);
 	}
 
 	@Override
 	public Boolean setAdmin(int idAdmin, String n, String p) {
-		return null;
+		return controleurAdmin.setAdmin(idAdmin, n, p);
 	}
 
 	@Override
 	public Boolean removeAdmin(int idAdmin) {
-		return null;
+		return controleurAdmin.removeAdmin(idAdmin);
 	}
 
 	@Override
 	public String getAdmin() {
-		return null;
+		return controleurAdmin.getAdmin();
 	}
 
 	@Override
 	public String getAdmin(int idAdmin) {
-		return null;
+		return controleurAdmin.getAdmin(idAdmin);
 	}
 
 	
 	@Override
 	public Boolean addCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n) {
-		return null;
+		return controleurCours.addCours(idCycle, idMatiere, idEnseignant, idCours, n);
 	}
 
 	@Override
 	public Boolean setCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n) {
-		return null;
+		return controleurCours.setCours(idCycle, idMatiere, idEnseignant, idCours, n);
 	}
 
 	@Override
 	public Boolean removeCours(int idCours) {
-		return null;
+		return controleurCours.removeCours(idCours);
 	}
 
 	@Override
 	public String getCours() {
-		return null;
+		return controleurCours.getCours();
 	}
 
 	@Override
 	public String getCours(int idCours) {
-		return null;
+		return controleurCours.getCours(idCours);
 	}
 
 	@Override
 	public Boolean inscrireUserCours(int idUser, int idCours) {
-		return null;
+		return controleurCours.inscrireUserCours(idUser, idCours);
 	}
 
 	@Override
 	public Boolean desinscrireUserCours(int idUser, int idCours) {
-		return null;
+		return controleurCours.desinscrireUserCours(idUser, idCours);
 	}
 
 	
 	@Override
 	public Boolean addCycle(int idCycle, String n) {
-		return null;
+		return controleurCycle.addCycle(idCycle, n);
 	}
 
 	@Override
 	public Boolean setCycle(int idCycle, String n) {
-		return null;
+		return controleurCycle.setCycle(idCycle, n);
 	}
 
 	@Override
 	public Boolean removeCycle(int idCycle) {
-		return null;
+		return controleurCycle.removeCycle(idCycle);
 	}
 
 	@Override
 	public String getCycle() {
-		return null;
+		return controleurCycle.getCycle();
 	}
 
 	@Override
 	public String getCycle(int idCycle) {
-		return null;
+		return controleurCycle.getCycle(idCycle);
 	}
 
 	
 	@Override
 	public Boolean addMatiere(int idMatiere, String n) {
-		return null;
+		return controleurMatiere.addMatiere(idMatiere, n);
 	}
 
 	@Override
 	public Boolean setMatiere(int idMatiere, String n) {
-		return null;
+		return controleurMatiere.setMatiere(idMatiere, n);
 	}
 
 	@Override
 	public Boolean removeMatiere(int idMatiere) {
-		return null;
+		return controleurMatiere.removeMatiere(idMatiere);
 	}
 
 	@Override
 	public String getMatiere() {
-		return null;
+		return controleurMatiere.getMatiere();
 	}
 
 	@Override
 	public String getMatiere(int idMatiere) {
-		return null;
+		return controleurMatiere.getMatiere(idMatiere);
 	}
 
 	
 	@Override
-	public Boolean addProjet(int idCours, int idProject, String n, String d,
-			Date dd, Date df) {
-		return null;
+	public Boolean addProjet(int idCours, int idProjet, String n, String d,	Date dd, Date df) {
+		return controleurProjet.addProjet(idCours, idProjet, n, d, dd, df);
 	}
 
 	@Override
-	public Boolean setProject(int idCours, int idProject, String n, String d,
-			Date dd, Date df) {
-		return null;
+	public Boolean setProjet(int idCours, int idProjet, String n, String d,	Date dd, Date df) {
+		return controleurProjet.setProjet(idCours, idProjet, n, d, dd, df);
 	}
 
 	@Override
-	public Boolean removeProject(int idProject) {
-		return null;
+	public Boolean removeProjet(int idProjet) {
+		return controleurProjet.removeProjet(idProjet);
 	}
 
 	@Override
-	public String getProject() {
-		return null;
+	public String getProjet() {
+		return controleurProjet.getProjet();
 	}
 
 	@Override
-	public String getProject(int idProject) {
-		return null;
+	public String getProjet(int idProjet) {
+		return controleurProjet.getProjet(idProjet);
 	}
 
 	@Override
-	public Boolean addEtudiantProject(int idEtudiant, int idProject) {
-		return null;
+	public Boolean addEtudiantProjet(int idEtudiant, int idProjet) {
+		return controleurProjet.addEtudiantProjet(idEtudiant, idProjet);
 	}
 
 	@Override
-	public Boolean removeEtudiantProject(int idEtudiant, int idProject) {
-		return null;
+	public Boolean removeEtudiantProjet(int idEtudiant, int idProjet) {
+		return controleurProjet.removeEtudiantProjet(idEtudiant, idProjet);
 	}
 	
 
 	@Override
-	public Boolean addStage(int idProject, int i, String n, Date dd, Date df) {
-		return null;
+	public Boolean addStage(int idProjet, int idStage, String n, Date dd, Date df) {
+		return controleurStage.addStage(idProjet, idStage, n, dd, df);
 	}
 
 	@Override
-	public Boolean setStage(int idProject, int i, String n, Date dd, Date df) {
-		return null;
+	public Boolean setStage(int idProjet, int idStage, String n, Date dd, Date df) {
+		return controleurStage.setStage(idProjet, idStage, n, dd, df);
 	}
 
 	@Override
 	public Boolean removeStage(int idStage) {
-		return null;
+		return controleurStage.removeStage(idStage);
 	}
 
 	@Override
 	public String getStage() {
-		return null;
+		return controleurStage.getStage();
 	}
 
 	@Override
 	public String getStage(int idStage) {
-		return null;
+		return controleurStage.getStage(idStage);
 	}
 
 	

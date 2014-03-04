@@ -86,24 +86,24 @@ public interface Facade {
 	public String getMatiere(int idMatiere);
 	
 	
-	public Boolean addProjet(int idCours, int idProject, String n, String d, Date dd, Date df);
+	public Boolean addProjet(int idCours, int idProjet, String n, String d, Date dd, Date df);
 	
-	public Boolean setProject(int idCours, int idProject, String n, String d, Date dd, Date df);
+	public Boolean setProjet(int idCours, int idProjet, String n, String d, Date dd, Date df);
 	
-	public Boolean removeProject(int idProject);
+	public Boolean removeProjet(int idProjet);
 	
-	public String getProject();
+	public String getProjet();
 	
-	public String getProject(int idProject);
+	public String getProjet(int idProjet);
 	
-	public Boolean addEtudiantProject(int idEtudiant, int idProject);
+	public Boolean addEtudiantProjet(int idEtudiant, int idProjet);
 	
-	public Boolean removeEtudiantProject(int idEtudiant, int idProject);
+	public Boolean removeEtudiantProjet(int idEtudiant, int idProjet);
 	
 	
-	public Boolean addStage(int idProject, int i, String n, Date dd, Date df);
+	public Boolean addStage(int idProjet, int i, String n, Date dd, Date df);
 	
-	public Boolean setStage(int idProject, int i, String n, Date dd, Date df);
+	public Boolean setStage(int idProjet, int i, String n, Date dd, Date df);
 	
 	public Boolean removeStage(int idStage);
 	

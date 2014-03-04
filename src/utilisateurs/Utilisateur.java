@@ -5,8 +5,8 @@ import java.util.Date;
 
 public abstract class Utilisateur {
 	
-	private ArrayList<scolarite.Cours> cours;
-	private ArrayList<mediatheque.Emprunt> emprunts;
+	protected ArrayList<scolarite.Cours> cours;
+	protected ArrayList<mediatheque.Emprunt> emprunts;
 	
 	private int id;
 	private String nom;
@@ -71,7 +71,9 @@ public abstract class Utilisateur {
 	public abstract int emprunter(medias.Media media, int nbjour);
 	
 	protected abstract int eligibilite(medias.Media media);
-
+	
+	public abstract int commenter(int idEmprunt, int n, String com);
+	
 	public int getNbEmpruntMax() {
 		return nbEmpruntMax;
 	}
