@@ -1,84 +1,101 @@
-package mediatheque;
+package controleurs;
 
 import java.util.Date;
 
+import utilisateurs.Utilisateur;
+import mediatheque.Facade;
+
+
 public class Controleur implements Facade {
 
+	ControleurMedia 	controleurMedia 	= new ControleurMedia();
+	ControleurGenre 	controleurGenre 	= new ControleurGenre();
+	ControleurUser 		controleurUser 		= new ControleurUser();
+	ControleurAdmin 	controleurAdmin 	= new ControleurAdmin();
+	ControleurCours 	controleurCours 	= new ControleurCours();
+	ControleurCycle 	controleurCycle 	= new ControleurCycle();
+	ControleurMatiere 	controleurMatiere 	= new ControleurMatiere();
+	ControleurProjet 	controleurProjet 	= new ControleurProjet();
+	ControleurStage 	controleurStage 	= new ControleurStage();
+	
 	@Override
 	public Boolean addMedia(int idCours, int idGenre, int idMedia, String n, String a, String r, int d) {
-		return null;
+		return controleurMedia.addMedia(idCours, idGenre, idMedia, n, a, r, d);
 	}
 
 	@Override
 	public Boolean setMedia(int idCours, int idGenre, int idMedia, String n, String a, String r, int d) {
-		return null;
+		return controleurMedia.setMedia(idCours, idGenre, idMedia, n, a, r, d);
 	}
 
 	@Override
 	public Boolean removeMedia(int idMedia) {
-		return null;
+		return controleurMedia.removeMedia(idMedia);
 	}
 
 	@Override
 	public String getMedia() {
-		return null;
+		return controleurMedia.getMedia();
 	}
 
 	@Override
 	public String getMedia(int idMedia) {
-		return null;
+		return controleurMedia.getMedia(idMedia);
 	}
 
+	
 	@Override
 	public Boolean addGenre(int idGenre, String n, int de) {
-		return null;
+		return controleurGenre.addGenre(idGenre, n, de);
 	}
 
 	@Override
 	public Boolean setGenre(int idGenre, String n, int de) {
-		return null;
+		return controleurGenre.setGenre(idGenre, n, de);
 	}
 
 	@Override
 	public Boolean removeGenre(int idGenre) {
-		return null;
+		return controleurGenre.removeGenre(idGenre);
 	}
 
 	@Override
 	public String getGenre() {
-		return null;
+		return controleurGenre.getGenre();
 	}
 
 	@Override
 	public String getGenre(int idGenre) {
-		return null;
+		return controleurGenre.getGenre(idGenre);
 	}
 
+	
 	@Override
 	public Boolean addUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
-		return null;
+		return controleurUser.addUser(idUser, n, p, t, nbEM, nbENC);
 	}
 
 	@Override
 	public Boolean setUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
-		return null;
+		return controleurUser.setUser(idUser, n, p, t, nbEM, nbENC);
 	}
 
 	@Override
 	public Boolean removeUser(int idUser) {
-		return null;
+		return controleurUser.removeUser(idUser);
 	}
 
 	@Override
 	public String getUser() {
-		return null;
+		return controleurUser.getUser();
 	}
 
 	@Override
 	public String getUser(int idUser) {
-		return null;
+		return controleurUser.getUser(idUser);
 	}
 
+	
 	@Override
 	public Boolean addAdmin(int idAdmin, String n, String p) {
 		return null;
@@ -104,6 +121,7 @@ public class Controleur implements Facade {
 		return null;
 	}
 
+	
 	@Override
 	public Boolean addCours(int idCycle, int idMatiere, int idEnseignant, int idCours, String n) {
 		return null;
@@ -139,6 +157,7 @@ public class Controleur implements Facade {
 		return null;
 	}
 
+	
 	@Override
 	public Boolean addCycle(int idCycle, String n) {
 		return null;
@@ -164,6 +183,7 @@ public class Controleur implements Facade {
 		return null;
 	}
 
+	
 	@Override
 	public Boolean addMatiere(int idMatiere, String n) {
 		return null;
@@ -189,6 +209,7 @@ public class Controleur implements Facade {
 		return null;
 	}
 
+	
 	@Override
 	public Boolean addProjet(int idCours, int idProject, String n, String d,
 			Date dd, Date df) {
@@ -252,6 +273,7 @@ public class Controleur implements Facade {
 		return null;
 	}
 
+	
 	@Override
 	public Boolean emprunter(int idUser, int idMedia, Date de, Date dr) {
 		return null;

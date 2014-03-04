@@ -2,7 +2,7 @@ package test;
 
 import java.util.Date;
 
-import mediatheque.Controleur;
+import controleurs.Controleur;
 
 
 public class ControleurTest {

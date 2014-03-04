@@ -6,7 +6,7 @@ import medias.*;
 import scolarite.*;
 import utilisateurs.*;
 
-public class main {
+public class Bdd {
 	
 	public static ArrayList<Genre> listGenres = new ArrayList<Genre> ();
 	public static ArrayList<Media> listMedias = new ArrayList<Media> ();
