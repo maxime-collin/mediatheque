@@ -96,4 +96,18 @@ public class Emprunt {
 			this.media.getCours().getProf().addAlerteEmprunt(this);
 		}			
 	}
+	
+	public String toString() {
+		String res = "";
+		
+		res += id + " ";
+		res += emprunteur.getNom() + " ";
+		res += media.getNom() + " ";
+		res += dateEmprunt + "->" + dateRetour + " ";
+		res += "rendu : " + finis + "\n";
+		res += commentaire + "\n";
+		res += note + "\n";
+		
+		return res;
+	}
 }

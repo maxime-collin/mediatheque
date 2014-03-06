@@ -101,13 +101,13 @@ public class Cours {
 		res += id + " ";
 		res += nom + "\n";
 		
-		res += "cycle : " + cycle + "\n";
-		res += "matiere : " + matiere + "\n";
-		res += "enseignant" + prof + "\n";
+		res += "cycle : " + cycle.getNom() + "\n";
+		res += "matiere : " + matiere.getNom() + "\n";
+		res += "enseignant" + prof.getNom() + "\n";
 		
 		res += "etudiants : ";
 		for (int i = 0; i < etudiants.size(); i++)
-			res += etudiants.get(i) + " ";
+			res += etudiants.get(i).getNom() + " ";
 		res += "\n";
 		
 		return res;

@@ -199,6 +199,30 @@ public abstract class Utilisateur {
 		this.addEmprunts(new emprunt.Emprunt(this,media,deb,fin));
 		//media.setDisponible(false);
 	}
-	
+
+	public String toString() {
+		String res = "";
+		
+		res += getId() + " ";
+		res += getNom() + " ";
+		res += getPrenom() + " ";
+		res += getType() + "\n";
+		
+		res += "cours : ";
+		for (int i = 0; i < getCours().size(); i++)
+			res += getCours().get(i) + " ";
+		res += "\n";
+		
+		res += "emprunts : ";
+		for (int i = 0; i < getEmprunts().size(); i++)
+			res += getEmprunts().get(i) + " ";
+		res += "\n";
+		
+		res += "nbEmpruntMax : " + getNbEmpruntMax() + "\n";
+		res += "nbEmpruntEnCours : " + getNbEmpruntEnCours() + "\n";
+		res += "nbEmpruntNonCommente" + getNbEmpruntNonCommente() + "\n";
+		
+		return res;
+	}
 
 }

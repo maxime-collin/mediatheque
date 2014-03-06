@@ -56,29 +56,5 @@ public class Enseignant extends Utilisateur {
 			ArrayList<emprunt.Emprunt> notificationEmprunts) {
 		NotificationEmprunts = notificationEmprunts;
 	}
-	
-	public String toString() {
-		String res = "";
-
-		res += getId() + " ";
-		res += getNom() + " ";
-		res += getPrenom() + " ";
-		res += getType() + "\n";
 		
-		res += "cours : ";
-		for (int i = 0; i < getCours().size(); i++)
-			res += getCours().get(i) + " ";
-		res += "\n";
-		
-		res += "emprunts : ";
-		for (int i = 0; i < getEmprunts().size(); i++)
-			res += getEmprunts().get(i) + " ";
-		res += "\n";
-		
-		res += "nbEmpruntMax : " + getNbEmpruntMax() + "\n";
-		res += "nbEmpruntEnCours : " + getNbEmpruntEnCours() + "\n";
-		
-		return res;
-	}
-	
 }

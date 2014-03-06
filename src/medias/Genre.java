@@ -41,4 +41,14 @@ public class Genre {
 	public void setDureeEmprunt(int dureeEmprunt) {
 		this.dureeEmprunt = dureeEmprunt;
 	}
+	
+	public String toString() {
+		String res = "";
+		
+		res += id + " ";
+		res += nom + " ";
+		res += dureeEmprunt + "\n";
+		
+		return res;
+	}
 }

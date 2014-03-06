@@ -64,4 +64,20 @@ public class Stage {
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
+	
+	public String toString() {
+		String res = "";
+		
+		res += id + " ";
+		res += nom + " ";
+		res += dateDebut + "->";
+		res += dateFin + "\n";
+	
+		res += "projet : " + projet + "\n";
+		res += "etudiants : ";
+		for (int i = 0; i < projet.getEtudiants().size(); i++)
+			res += projet.getEtudiants().get(i).getNom();
+	
+		return res;
+	}
 }

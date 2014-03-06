@@ -109,6 +109,11 @@ public class Projet {
 		res += dateFin + " ";
 		res += cours.getNom() + " ";
 		
+		res += "etudiants : ";
+		for (int i = 0; i < etudiants.size(); i++)
+			res += etudiants.get(i).getNom();
+		res += "\n";
+		
 		return res;
 	}
 }

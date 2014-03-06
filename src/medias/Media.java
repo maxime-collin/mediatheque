@@ -105,4 +105,18 @@ public class Media {
 	public void setDisponible(boolean disponible) {
 		this.disponible = disponible;
 	}
+	
+	public String toString() {
+		String res = "";
+		
+		res += id + " ";
+		res += nom + " ";
+		res += auteur + " ";
+		res += genre.getNom() + " ";
+		res += cours.getNom() + " ";
+		res += duree + " ";
+		res += "disponible : " + disponible + "\n";
+		
+		return res;
+	}
 }
