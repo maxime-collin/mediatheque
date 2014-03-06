@@ -50,7 +50,7 @@ public class Bdd {
 		
 		//Création d'enseignant
 		Enseignant fabiani = new Enseignant(0,"FABIANI","Erwan","Enseignant",10); 
-		Enseignant gire = new Enseignant(0,"GIRE","Sophie","Enseignant",10);
+		Enseignant gire = new Enseignant(1,"GIRE","Sophie","Enseignant",10);
 		
 		listEnseignants.add(fabiani);
 		listEnseignants.add(gire);
@@ -68,7 +68,7 @@ public class Bdd {
 		
 		//Création de cours
 		Cours c1 = new Cours(m1,occam,fabiani,1,"Occam : algorithmes distribués");
-		Cours c2 = new Cours(m1,idl,gire,1,"Compilation : JFlex");
+		Cours c2 = new Cours(m1,idl,gire,2,"Compilation : JFlex");
 		
 		listCours.add(c1);
 		listCours.add(c2);
@@ -77,10 +77,10 @@ public class Bdd {
 		Media med1 = new Media(c1,livre,1,"OCCAM : initiation","Erwan Fabiani","La vie passsionante que l'on peut avoir avec l'OCCAM !!!",0);
 		Media med2 = new Media(c2,film,2,"Compilation","Gire","Les méfaits du bug sur la compil'",180);
 		Media med3 = new Media(c2,documentaire,3,"Compilation2","Bob","resume2",0);
-		Media med4 = new Media(c1,documentaire,3,"OCCAM2","Jacques","resume2",0);
-		Media med5 = new Media(c2,documentaire,3,"Compilation3","Bob","resume3",0);
-		Media med6 = new Media(c1,documentaire,3,"Compilation2","Bob","resume2",0);
-		Media med7 = new Media(c2,documentaire,3,"Compilation2","Bob","resume2",0);
+		Media med4 = new Media(c1,documentaire,4,"OCCAM2","Jacques","resume2",0);
+		Media med5 = new Media(c2,documentaire,5,"Compilation3","Bob","resume3",0);
+		Media med6 = new Media(c1,documentaire,6,"Compilation2","Bob","resume2",0);
+		Media med7 = new Media(c2,documentaire,7,"Compilation2","Bob","resume2",0);
 		
 		listMedias.add(med1);
 		listMedias.add(med2);
