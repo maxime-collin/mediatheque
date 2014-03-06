@@ -27,9 +27,9 @@ public interface Facade {
 	public String getGenre(int idGenre);
 	
 	
-	public Boolean addUser(int idUser, String n, String p, String t, int nbEM, int nbENC);
+	public Boolean addUser(int idUser, String n, String p, String t, int nbEM);
 	
-	public Boolean setUser(int idUser, String n, String p, String t, int nbEM, int nbENC);
+	public Boolean setUser(int idUser, String n, String p, String t, int nbEM);
 	
 	public Boolean removeUser(int idUser);
 	

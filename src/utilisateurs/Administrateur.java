@@ -35,4 +35,14 @@ public class Administrateur {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	
+	public String toString() {
+		String res = "";
+		
+		res += getId() + " ";
+		res += getNom() + " ";
+		res += getPrenom() + "\n";
+		
+		return res;
+	}
 }

@@ -89,13 +89,13 @@ public class Controleur implements Facade {
 	//				User					//
 	//////////////////////////////////////////
 	@Override
-	public Boolean addUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
-		return controleurUser.addUser(idUser, n, p, t, nbEM, nbENC);
+	public Boolean addUser(int idUser, String n, String p, String t, int nbEM) {
+		return controleurUser.addUser(idUser, n, p, t, nbEM);
 	}
 
 	@Override
-	public Boolean setUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
-		return controleurUser.setUser(idUser, n, p, t, nbEM, nbENC);
+	public Boolean setUser(int idUser, String n, String p, String t, int nbEM) {
+		return controleurUser.setUser(idUser, n, p, t, nbEM);
 	}
 
 	@Override

@@ -30,4 +30,13 @@ public class Cycle {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	
+	public String toString() {
+		String res = "";
+	
+		res += id + " ";
+		res += nom + "\n";
+		
+		return res;
+	}
 }

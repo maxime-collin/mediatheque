@@ -80,14 +80,14 @@ public class ControleurTest {
 	//////////////////////////////////////////
 	//				User					//
 	//////////////////////////////////////////
-	public Boolean testAddUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
-		Boolean valide = controleur.addUser(idUser, n, p, t, nbEM, nbENC);
+	public Boolean testAddUser(int idUser, String n, String p, String t, int nbEM) {
+		Boolean valide = controleur.addUser(idUser, n, p, t, nbEM);
 				
 		return valide;	
 	}
 	
-	public Boolean testSetUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
-		Boolean valide = controleur.setUser(idUser, n, p, t, nbEM, nbENC);
+	public Boolean testSetUser(int idUser, String n, String p, String t, int nbEM) {
+		Boolean valide = controleur.setUser(idUser, n, p, t, nbEM);
 				
 		return valide;
 	}
@@ -372,109 +372,119 @@ public class ControleurTest {
 		
 		System.out.println("demarrage test Controleur");
 		
-		System.out.println(displayFunctionTest("addMedia") + testeur.testAddMedia(0, 0, 0, null, null, null, 0) );
+		System.out.println(displayFunctionTest("addMedia") + testeur.testAddMedia(1, 2, 8, "test", "auteur", "resume", 42) );
 		
-		System.out.println(displayFunctionTest("setMedia") + testeur.testSetMedia(0, 0, 0, null, null, null, 0) );
+		System.out.println(displayFunctionTest("setMedia") + testeur.testSetMedia(2, 1, 8, "test", "maxime", "resume", 42) );
 		
-		System.out.println(displayFunctionTest("removeMedia") + testeur.testRemoveMedia(0) );
+		System.out.println(displayFunctionTest("removeMedia") + testeur.testRemoveMedia(1) );
 
 		System.out.println(displayFunctionTest("getMedia") + testeur.testGetMedia() );
 
-		System.out.println(displayFunctionTest("getMedia(int idMedia") + testeur.testGetMedia(0) );
+		System.out.println(displayFunctionTest("getMedia(int idMedia") + testeur.testGetMedia(8) );
 
-		System.out.println(displayFunctionTest("addGenre") + testeur.testAddGenre(0, null, 0) );
+		
+		System.out.println(displayFunctionTest("addGenre") + testeur.testAddGenre(4, "Musique", 14) );
 
-		System.out.println(displayFunctionTest("setGenre") + testeur.testSetGenre(0, null, 0) );
+		System.out.println(displayFunctionTest("setGenre") + testeur.testSetGenre(4, "Documentation", 21) );
 
-		System.out.println(displayFunctionTest("removeGenre") + testeur.testRemoveGenre(0) );
+		System.out.println(displayFunctionTest("removeGenre") + testeur.testRemoveGenre(1) );
 	
 		System.out.println(displayFunctionTest("getGenre") + testeur.testGetGenre() );
 		
-		System.out.println(displayFunctionTest("getGenre(int idGenre)") + testeur.testGetGenre(0) );
+		System.out.println(displayFunctionTest("getGenre(int idGenre)") + testeur.testGetGenre(4) );
 		
-		System.out.println(displayFunctionTest("addUser") + testeur.testAddUser(0, null, null, null, 0, 0) );
 		
-		System.out.println(displayFunctionTest("setUser") + testeur.testSetUser(0, null, null, null, 0, 0) );
+		System.out.println(displayFunctionTest("addUser") + testeur.testAddUser(2, "Bourrel", "Guillaume", "Enseignant", 100) );
+		
+		System.out.println(displayFunctionTest("setUser") + testeur.testSetUser(2, "Alain", "Plantec", "Enseignant", 100) );
 		
 		System.out.println(displayFunctionTest("removeUser") + testeur.testRemoveUser(0) );
 		
 		System.out.println(displayFunctionTest("getUser") + testeur.testGetUser() );
 		
-		System.out.println(displayFunctionTest("getUser(int idUser)") + testeur.testGetUser(0) );
+		System.out.println(displayFunctionTest("getUser(int idUser)") + testeur.testGetUser(2) );
 		
-		System.out.println(displayFunctionTest("addAdmin") + testeur.testAddAdmin(0, null, null) );
 		
-		System.out.println(displayFunctionTest("setAdmin") + testeur.testSetAdmin(0, null, null) );
+		System.out.println(displayFunctionTest("addAdmin") + testeur.testAddAdmin(0, "admin", "admin") );
 		
-		System.out.println(displayFunctionTest("removeAdmin") + testeur.testRemoveAdmin(0) );
-		
+		System.out.println(displayFunctionTest("setAdmin") + testeur.testSetAdmin(0, "admin", "root") );
+				
 		System.out.println(displayFunctionTest("getAdmin") + testeur.testGetAdmin() );
 		
 		System.out.println(displayFunctionTest("getAdmin(int idAdmin)") + testeur.testGetAdmin(0) );
+
+		System.out.println(displayFunctionTest("removeAdmin") + testeur.testRemoveAdmin(0) );
+
 		
-		System.out.println(displayFunctionTest("addCours") + testeur.testAddCours(0, 0, 0, 0, null) );
+		System.out.println(displayFunctionTest("addCours") + testeur.testAddCours(1, 1, 0, 3, "coursTest") );
 		
-		System.out.println(displayFunctionTest("setCours") + testeur.testSetCours(0, 0, 0, 0, null) );
+		System.out.println(displayFunctionTest("setCours") + testeur.testSetCours(2, 1, 0, 3, "coursTest") );
 		
-		System.out.println(displayFunctionTest("removeCours") + testeur.testRemoveCours(0) );
+		System.out.println(displayFunctionTest("removeCours") + testeur.testRemoveCours(1) );
 		
 		System.out.println(displayFunctionTest("getCours") + testeur.testGetCours() );
 		
-		System.out.println(displayFunctionTest("getCours(int idCours)") + testeur.testGetCours(0));
+		System.out.println(displayFunctionTest("getCours(int idCours)") + testeur.testGetCours(3));
 		
-		System.out.println(displayFunctionTest("inscrireUserCours") + testeur.testInscrireUserCours(0, 0) );
+		System.out.println(displayFunctionTest("inscrireUserCours") + testeur.testInscrireUserCours(1, 3) );
 		
-		System.out.println(displayFunctionTest("desincrireUserCours") + testeur.testDesinscrireUserCours(0, 0));
+		System.out.println(displayFunctionTest("desincrireUserCours") + testeur.testDesinscrireUserCours(1, 3));
 		
-		System.out.println(displayFunctionTest("addCycle") + testeur.testAddCycle(0, null) );
+		
+		System.out.println(displayFunctionTest("addCycle") + testeur.testAddCycle(3, "M2") );
 
-		System.out.println(displayFunctionTest("setCycle") + testeur.testSetCycle(0, null) );
+		System.out.println(displayFunctionTest("setCycle") + testeur.testSetCycle(3, "M2_SIAM") );
 		
-		System.out.println(displayFunctionTest("removeCycle") + testeur.testRemoveCycle(0) );
+		System.out.println(displayFunctionTest("removeCycle") + testeur.testRemoveCycle(1) );
 		
 		System.out.println(displayFunctionTest("getCycle") + testeur.testGetCycle() );
 		
-		System.out.println(displayFunctionTest("getCycle(int idCycle)") + testeur.testGetCycle(0));
+		System.out.println(displayFunctionTest("getCycle(int idCycle)") + testeur.testGetCycle(3));
 		
-		System.out.println(displayFunctionTest("addMatiere") + testeur.testAddMatiere(0, null) );
 		
-		System.out.println(displayFunctionTest("setMatiere") + testeur.testSetMatiere(0, null) );
+		System.out.println(displayFunctionTest("addMatiere") + testeur.testAddMatiere(3, "SOR") );
 		
-		System.out.println(displayFunctionTest("removeMatiere") + testeur.testRemoveMatiere(0) );
+		System.out.println(displayFunctionTest("setMatiere") + testeur.testSetMatiere(3, "JEE") );
+		
+		System.out.println(displayFunctionTest("removeMatiere") + testeur.testRemoveMatiere(1) );
 		
 		System.out.println(displayFunctionTest("getMatiere") + testeur.testGetMatiere() );
 		
-		System.out.println(displayFunctionTest("getMatiere(int idMatiere)") + testeur.testGetMatiere(0) );
+		System.out.println(displayFunctionTest("getMatiere(int idMatiere)") + testeur.testGetMatiere(3) );
 		
-		System.out.println(displayFunctionTest("addProjet") + testeur.testAddProjet(0, 0, null, null, null, null) );
 		
-		System.out.println(displayFunctionTest("setProjet") + testeur.testSetProjet(0, 0, null, null, null, null) );
+		System.out.println(displayFunctionTest("addProjet") + testeur.testAddProjet(3, 0, "projet", "carto web", new Date(), new Date(42000000)) );
 		
-		System.out.println(displayFunctionTest("removeProjet") + testeur.testRemoveProjet(0) );
-		
+		System.out.println(displayFunctionTest("setProjet") + testeur.testSetProjet(2, 0, "projet", "workflow systeme gestion campagne oceanographique", new Date(), new Date(42000000)) );
+				
 		System.out.println(displayFunctionTest("getProjet") + testeur.testGetProjet() );
 		
 		System.out.println(displayFunctionTest("getProjet(int idProjet)") + testeur.testGetProjet(0) );
 		
-		System.out.println(displayFunctionTest("addEtudiantProjet") + testeur.testAddEtudiantProjet(0, 0) );
+		System.out.println(displayFunctionTest("addEtudiantProjet") + testeur.testAddEtudiantProjet(4, 0) );
 		
-		System.out.println(displayFunctionTest("removeEtudiantProjet") + testeur.testRemoveEtudiantProjet(0, 0) );
+		System.out.println(displayFunctionTest("removeEtudiantProjet") + testeur.testRemoveEtudiantProjet(4, 0) );
+
 		
-		System.out.println(displayFunctionTest("addStage") + testeur.testAddStage(0, 0, null, null, null) );
+		System.out.println(displayFunctionTest("addStage") + testeur.testAddStage(0, 0, "IFREMER", new Date(), new Date(42000000)) );
 		
-		System.out.println(displayFunctionTest("setStage") + testeur.testSetStage(0, 0, null, null, null) );
-		
-		System.out.println(displayFunctionTest("removeStage") + testeur.testRemoveStage(0) );
-		
+		System.out.println(displayFunctionTest("setStage") + testeur.testSetStage(0, 0, "GEOMER", new Date(), new Date(42000000)) );
+				
 		System.out.println(displayFunctionTest("getStage") + testeur.testGetStage() );
 		
 		System.out.println(displayFunctionTest("getStage(int idStage)") + testeur.testGetStage(0) );
+
+		System.out.println(displayFunctionTest("removeStage") + testeur.testRemoveStage(0) );
+
+
+		System.out.println(displayFunctionTest("removeProjet") + testeur.testRemoveProjet(0) );
+
 		
-		System.out.println(displayFunctionTest("emprunter") + testeur.testEmprunter(0, 0, null, null) );
+		System.out.println(displayFunctionTest("emprunter") + testeur.testEmprunter(3, 5, new Date(), new Date(42000000)) );
 		
-		System.out.println(displayFunctionTest("emprunter(int nbJours") + testeur.testEmprunter(0, 0, null, null, 0) );
+		System.out.println(displayFunctionTest("emprunter(int nbJours") + testeur.testEmprunter(2, 3, new Date(), new Date(42000000), 7) );
 		
-		System.out.println(displayFunctionTest("commenter") + testeur.testCommenter(0, 0, 0, null) );
+		System.out.println(displayFunctionTest("commenter") + testeur.testCommenter(3, 5, 4, "trop d'la balle") );
 
 	}
 	

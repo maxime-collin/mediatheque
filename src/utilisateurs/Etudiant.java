@@ -10,69 +10,7 @@ public class Etudiant extends Utilisateur {
 	public Etudiant(int i, String n, String p, String t, int nbEM) {
 		super(i, n, p ,t, nbEM);		
 	}
-
-	@Override
-	public int emprunter(Media media) {
-		
-		int valeurEligible = eligibilite(media);
-		
-		if(valeurEligible == 1)
-		{
-			// -> Création de l'emprunt
-			
-			// Récupère la date courante
-			Date datedeb = new Date();
-			Date datefin;
-			
-			Calendar cal = Calendar.getInstance();
-			cal.add(Calendar.DATE, media.getGenre().getDureeEmprunt());
-			datefin = cal.getTime();
-			
-			faireUnEmprunt(media, datedeb, datefin);			
-						
-			return 1;
-		}
-		else // Sinon
-		{
-			return valeurEligible;
-		}		
-	}
-
-	@Override
-	public int emprunter(Media media, int nbJour) {
-		
-		int valeurEligible = eligibilite(media);
-		
-		if(valeurEligible == 1)
-		{
-			// -> Création de l'emprunt
-			
-			// Récupère la date courante
-			Date datedeb = new Date();
-			Date datefin;
-			
-			Calendar cal = Calendar.getInstance();
-			cal.add(Calendar.DATE, nbJour);
-			datefin = cal.getTime();
-			
-			faireUnEmprunt(media, datedeb, datefin);			
-						
-			return 1;
-		}
-		else // Sinon
-		{
-			return valeurEligible;
-		}
-	}
 	
-	private void faireUnEmprunt(medias.Media media, Date deb, Date fin)
-	{
-		this.incrementerNbEmpruntEnCours();
-		this.incrementerNbEmpruntNonCommente();
-		
-		this.addEmprunts(new emprunt.Emprunt(this,media,deb,fin));
-		media.setDisponible(false);
-	}
 
 	@Override
 	protected int eligibilite(Media media) {
@@ -95,16 +33,53 @@ public class Etudiant extends Utilisateur {
 
 	@Override
 	public int commenter(int idEmprunt, int n, String com) {
-		this.emprunts.get(idEmprunt).setCommentaire(com);
-		this.emprunts.get(idEmprunt).setNote(n);
+		emprunt.Emprunt empruntConcerne = this.getEmprunt(idEmprunt);
+		empruntConcerne.setCommentaire(com);
+		empruntConcerne.setNote(n);
 		
 		this.decrementerNbEmpruntEnCours();
 		this.decrementerNbEmpruntNonCommente();
-		this.emprunts.get(idEmprunt).getMedia().setDisponible(true);
+		empruntConcerne.getMedia().setDisponible(true);
+		empruntConcerne.setFinis(true);
 		
 		return 1;
 	}
+
+
+	@Override
+	public void VerifierLesEmprunts() {
+		for(emprunt.Emprunt tmp : emprunts)
+		{
+			if(!tmp.isFinis())
+			{
+				tmp.faireUneNotification();
+			}
+		}
+	}
 	
-	
+	public String toString() {
+		String res = "";
+		
+		res += getId() + " ";
+		res += getNom() + " ";
+		res += getPrenom() + " ";
+		res += getType() + "\n";
+		
+		res += "cours : ";
+		for (int i = 0; i < getCours().size(); i++)
+			res += getCours().get(i) + " ";
+		res += "\n";
+		
+		res += "emprunts : ";
+		for (int i = 0; i < getEmprunts().size(); i++)
+			res += getEmprunts().get(i) + " ";
+		res += "\n";
+		
+		res += "nbEmpruntMax : " + getNbEmpruntMax() + "\n";
+		res += "nbEmpruntEnCours : " + getNbEmpruntEnCours() + "\n";
+		res += "nbEmpruntNonCommente" + getNbEmpruntNonCommente() + "\n";
+		
+		return res;
+	}
 
 }

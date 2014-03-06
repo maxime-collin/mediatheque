@@ -1,7 +1,10 @@
 package utilisateurs;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
+
+import medias.Media;
 
 public abstract class Utilisateur {
 	
@@ -66,13 +69,63 @@ public abstract class Utilisateur {
 		this.type = type;
 	}
 	
-	public abstract int emprunter(medias.Media media);
-	
-	public abstract int emprunter(medias.Media media, int nbjour);
+	public int emprunter(Media media) {
+		
+		int valeurEligible = eligibilite(media);
+		
+		if(valeurEligible == 1)
+		{
+			// -> Création de l'emprunt
+			
+			// Récupère la date courante
+			Date datedeb = new Date();
+			Date datefin;
+			
+			Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.DATE, media.getGenre().getDureeEmprunt());
+			datefin = cal.getTime();
+			
+			faireUnEmprunt(media, datedeb, datefin);			
+						
+			return 1;
+		}
+		else // Sinon
+		{
+			return valeurEligible;
+		}		
+	}
+
+	public int emprunter(Media media, int nbJour) {
+		
+		int valeurEligible = eligibilite(media);
+		
+		if(valeurEligible == 1)
+		{
+			// -> Création de l'emprunt
+			
+			// Récupère la date courante
+			Date datedeb = new Date();
+			Date datefin;
+			
+			Calendar cal = Calendar.getInstance();
+			cal.add(Calendar.DATE, nbJour);
+			datefin = cal.getTime();
+			
+			faireUnEmprunt(media, datedeb, datefin);			
+						
+			return 1;
+		}
+		else // Sinon
+		{
+			return valeurEligible;
+		}
+	}
 	
 	protected abstract int eligibilite(medias.Media media);
 	
 	public abstract int commenter(int idEmprunt, int n, String com);
+	
+	public abstract void VerifierLesEmprunts();
 	
 	public int getNbEmpruntMax() {
 		return nbEmpruntMax;
@@ -125,6 +178,26 @@ public abstract class Utilisateur {
 	public void addEmprunts(emprunt.Emprunt emprunt)
 	{
 		this.emprunts.add(emprunt);
+	}
+	
+	public emprunt.Emprunt getEmprunt(int idEmp)
+	{
+		emprunt.Emprunt resultat = null;
+		for(emprunt.Emprunt tmp : emprunts)
+		{
+			if(tmp.getId() == idEmp)
+				resultat = tmp;
+		}
+		return resultat;
+	}
+	
+	protected void faireUnEmprunt(medias.Media media, Date deb, Date fin)
+	{
+		this.incrementerNbEmpruntEnCours();
+		this.incrementerNbEmpruntNonCommente();
+		
+		this.addEmprunts(new emprunt.Emprunt(this,media,deb,fin));
+		//media.setDisponible(false);
 	}
 	
 

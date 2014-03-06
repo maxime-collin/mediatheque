@@ -9,23 +9,23 @@ public class ControleurUser {
 	ControleurEtudiant controleurEtudiant = new ControleurEtudiant();
 	ControleurEnseignant controleurEnseignant = new ControleurEnseignant();
 
-	public Boolean addUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
+	public Boolean addUser(int idUser, String n, String p, String t, int nbEM) {
 		if (t == "Etudiant")
-			return controleurEtudiant.addEtudiant(idUser, n, p, t, nbEM, nbENC);
+			return controleurEtudiant.addEtudiant(idUser, n, p, t, nbEM);
 		
 		if (t == "Enseignant")
-			return controleurEnseignant.addEnseignant(idUser, n, p, t, nbEM, nbENC);
+			return controleurEnseignant.addEnseignant(idUser, n, p, t, nbEM);
 		
 		// si le type n'est ni Etudiant, ni Enseignant : echec
 		return false;
 	}
 
-	public Boolean setUser(int idUser, String n, String p, String t, int nbEM, int nbENC) {
+	public Boolean setUser(int idUser, String n, String p, String t, int nbEM) {
 		if (t == "Etudiant")
-			return controleurEtudiant.setEtudiant(idUser, n, p, t, nbEM, nbENC);
+			return controleurEtudiant.setEtudiant(idUser, n, p, t, nbEM);
 		
 		if (t == "Enseignant")
-			return controleurEnseignant.setEnseignant(idUser, n, p, t, nbEM, nbENC);
+			return controleurEnseignant.setEnseignant(idUser, n, p, t, nbEM);
 		
 		// si le type n'est ni Etudiant, ni Enseignant : echec
 		return false;

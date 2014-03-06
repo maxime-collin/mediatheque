@@ -5,7 +5,7 @@ import utilisateurs.Enseignant;
 
 public class ControleurEnseignant {
 
-	public Boolean addEnseignant(int idEnseignant, String n, String p, String t, int nbEM, int nbENC) {
+	public Boolean addEnseignant(int idEnseignant, String n, String p, String t, int nbEM) {
 		// on verifie que l'id n'est pas deja utilise
 		int i = 0;
 		while (i < Bdd.listEnseignants.size()) {
@@ -23,7 +23,7 @@ public class ControleurEnseignant {
 		return true;
 	}
 
-	public Boolean setEnseignant(int idEnseignant, String n, String p, String t, int nbEM, int nbENC) {
+	public Boolean setEnseignant(int idEnseignant, String n, String p, String t, int nbEM) {
 		// on recupere l'index de l'enseignant
 		int i = 0;
 		Boolean found = false;

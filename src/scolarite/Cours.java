@@ -95,5 +95,22 @@ public class Cours {
 		this.nom = nom;
 	}
 	
+	public String toString() {
+		String res = "";
+		
+		res += id + " ";
+		res += nom + "\n";
+		
+		res += "cycle : " + cycle + "\n";
+		res += "matiere : " + matiere + "\n";
+		res += "enseignant" + prof + "\n";
+		
+		res += "etudiants : ";
+		for (int i = 0; i < etudiants.size(); i++)
+			res += etudiants.get(i) + " ";
+		res += "\n";
+		
+		return res;
+	}
 	
 }

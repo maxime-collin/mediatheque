@@ -25,4 +25,13 @@ public class Matiere {
 	public void setNom(String nom) {
 		this.nom = nom;
 	}
+	
+	public String toString() {
+		String res = "";
+	
+		res += id + " ";
+		res += nom + " ";
+		
+		return res;
+	}
 }

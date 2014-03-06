@@ -97,4 +97,18 @@ public class Projet {
 	public void setDateFin(Date dateFin) {
 		this.dateFin = dateFin;
 	}
+	
+	
+	public String toString() {
+		String res = "";
+	
+		res += id + " ";
+		res += nom + " ";
+		res += description + " ";
+		res += dateDebut + "->";
+		res += dateFin + " ";
+		res += cours.getNom() + " ";
+		
+		return res;
+	}
 }

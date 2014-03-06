@@ -5,7 +5,7 @@ import utilisateurs.Etudiant;
 
 public class ControleurEtudiant {
 
-	public Boolean addEtudiant(int idEtudiant, String n, String p, String t, int nbEM, int nbENC) {
+	public Boolean addEtudiant(int idEtudiant, String n, String p, String t, int nbEM) {
 		// on verifie que l'id n'est pas deja utilise
 		int i = 0;
 		while (i < Bdd.listEtudiants.size()) {
@@ -23,7 +23,7 @@ public class ControleurEtudiant {
 		return true;
 	}
 
-	public Boolean setEtudiant(int idEtudiant, String n, String p, String t, int nbEM, int nbENC) {
+	public Boolean setEtudiant(int idEtudiant, String n, String p, String t, int nbEM) {
 		// on recupere l'index de l'etudiant
 		int i = 0;
 		Boolean found = false;
