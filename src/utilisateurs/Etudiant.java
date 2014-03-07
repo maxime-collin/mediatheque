@@ -1,8 +1,5 @@
 package utilisateurs;
 
-import java.util.Calendar;
-import java.util.Date;
-
 import medias.Media;
 
 public class Etudiant extends Utilisateur {
