@@ -69,8 +69,10 @@ public class ControleurMatiere {
 		String listMatieres = "";
 		
 		int i = 0;
-		while (i < Bdd.listMatieres.size())
+		while (i < Bdd.listMatieres.size()) {
 			listMatieres += Bdd.listMatieres.get(i) + "\n";
+			i++;
+		}
 		
 		return listMatieres;
 	}

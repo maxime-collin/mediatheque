@@ -102,8 +102,10 @@ public class ControleurProjet {
 		String listProjets = "";
 		
 		int i = 0;
-		while (i < Bdd.listProjets.size())
+		while (i < Bdd.listProjets.size()) {
 			listProjets += Bdd.listProjets.get(i) + "\n";
+			i++;
+		}
 		
 		return listProjets;
 	}
@@ -131,7 +133,7 @@ public class ControleurProjet {
 		int indexEtudiant = 0;
 		Etudiant etudiant = null;
 		while (indexEtudiant < Bdd.listEtudiants.size() && etudiant == null) {
-			if (Bdd.listEtudiants.get(indexEtudiant).getId() == idProjet)
+			if (Bdd.listEtudiants.get(indexEtudiant).getId() == idEtudiant)
 				etudiant = Bdd.listEtudiants.get(indexEtudiant);
 			else
 				indexEtudiant++;
@@ -179,7 +181,7 @@ public class ControleurProjet {
 		int indexEtudiantProjet = 0;
 		Etudiant etudiant = null;
 		while (indexEtudiantProjet < projet.getEtudiants().size() && etudiant == null) {
-			if (projet.getEtudiants().get(indexEtudiantProjet).getId() == idProjet)
+			if (projet.getEtudiants().get(indexEtudiantProjet).getId() == idEtudiant)
 				etudiant = projet.getEtudiants().get(indexEtudiantProjet);
 			else
 				indexEtudiantProjet++;

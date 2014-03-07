@@ -69,8 +69,10 @@ public class ControleurAdmin {
 		String listAdmins = "";
 		
 		int i = 0;
-		while (i < Bdd.listAdmins.size())
+		while (i < Bdd.listAdmins.size()) {
 			listAdmins += Bdd.listAdmins.get(i) + "\n";
+			i++;
+		}
 		
 		return listAdmins;
 	}

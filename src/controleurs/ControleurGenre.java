@@ -69,8 +69,10 @@ public class ControleurGenre {
 		String listGenres = "";
 		
 		int i = 0;
-		while (i < Bdd.listGenres.size())
+		while (i < Bdd.listGenres.size()) {
 			listGenres += Bdd.listGenres.get(i) + "\n";
+			i++;
+		}
 		
 		return listGenres;
 	}

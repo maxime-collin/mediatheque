@@ -380,7 +380,7 @@ public class ControleurTest {
 
 		System.out.println(displayFunctionTest("getMedia") + testeur.testGetMedia() );
 
-		System.out.println(displayFunctionTest("getMedia(int idMedia") + testeur.testGetMedia(8) );
+		System.out.println(displayFunctionTest("getMedia(int idMedia)") + testeur.testGetMedia(8) );
 
 		
 		System.out.println(displayFunctionTest("addGenre") + testeur.testAddGenre(4, "Musique", 14) );
@@ -416,9 +416,9 @@ public class ControleurTest {
 		System.out.println(displayFunctionTest("removeAdmin") + testeur.testRemoveAdmin(0) );
 
 		
-		System.out.println(displayFunctionTest("addCours") + testeur.testAddCours(1, 1, 0, 3, "coursTest") );
+		System.out.println(displayFunctionTest("addCours") + testeur.testAddCours(1, 1, 2, 3, "coursTest") );
 		
-		System.out.println(displayFunctionTest("setCours") + testeur.testSetCours(2, 1, 0, 3, "coursTest") );
+		System.out.println(displayFunctionTest("setCours") + testeur.testSetCours(2, 1, 2, 3, "coursTest") );
 		
 		System.out.println(displayFunctionTest("removeCours") + testeur.testRemoveCours(1) );
 		

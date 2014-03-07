@@ -56,15 +56,18 @@ public class ControleurStage {
 			return false;
 				
 		// si le projet existe
-		// on verifie que l'id n'est pas deja utilise
+		// on recupere l'index du stage
 		i = 0;
-		while (i < Bdd.listStages.size()) {
+		Boolean found = false;
+		while (i < Bdd.listStages.size() && !found) {
 			if (Bdd.listStages.get(i).getId() == idStage)
-				return false;
+				found = true;
 			else
 				i++;
 		}
 		
+		if (!found)
+			return true;
 		
 		// si l'id n'est pas utilise, on instancie un nouveau stage
 		Stage stage = new Stage(projet, idStage, n, dd, df);
@@ -98,8 +101,10 @@ public class ControleurStage {
 		String listStages = "";
 		
 		int i = 0;
-		while (i < Bdd.listStages.size())
+		while (i < Bdd.listStages.size()) {
 			listStages += Bdd.listStages.get(i) + "\n";
+			i++;
+		}
 		
 		return listStages;
 	}

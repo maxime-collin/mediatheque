@@ -62,7 +62,7 @@ public class ControleurCours {
 		}
 		
 		// si l'id n'est pas utilise, on instancie un nouveau Cours
-		Cours Cours = new Cours(cycle, matiere, enseignant, i, n);
+		Cours Cours = new Cours(cycle, matiere, enseignant, idCours, n);
 		
 		Bdd.listCours.add(Cours);
 		
@@ -112,17 +112,21 @@ public class ControleurCours {
 			return false;
 		
 		
-		// on verifie que l'id n'est pas deja utilise
+		// on recupere l'index du cours
 		i = 0;
-		while (i < Bdd.listCours.size()) {
+		Boolean found = false;
+		while (i < Bdd.listCours.size() && !found) {
 			if (Bdd.listCours.get(i).getId() == idCours)
-				return false;
+				found = true;
 			else
 				i++;
 		}
 		
+		if (!found) 
+			return false;
+
 		// si l'id n'est pas utilise, on instancie un nouveau Cours
-		Cours Cours = new Cours(cycle, matiere, enseignant, i, n);
+		Cours Cours = new Cours(cycle, matiere, enseignant, idCours, n);
 		
 		Bdd.listCours.set(i, Cours);
 		
@@ -153,8 +157,10 @@ public class ControleurCours {
 		String listCours = "";
 		
 		int i = 0;
-		while (i < Bdd.listCours.size())
+		while (i < Bdd.listCours.size()) {
 			listCours += Bdd.listCours.get(i) + "\n";
+			i++;
+		}
 		
 		return listCours;
 	}

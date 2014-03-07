@@ -69,8 +69,10 @@ public class ControleurCycle {
 		String listCycles = "";
 		
 		int i = 0;
-		while (i < Bdd.listCycles.size())
+		while (i < Bdd.listCycles.size()) {
 			listCycles += Bdd.listCycles.get(i) + "\n";
+			i++;
+		}
 		
 		return listCycles;
 	}

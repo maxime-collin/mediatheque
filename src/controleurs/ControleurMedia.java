@@ -126,9 +126,10 @@ public class ControleurMedia {
 		String listMedias = "";
 		
 		int i = 0;
-		while (i < Bdd.listMedias.size())
+		while (i < Bdd.listMedias.size()) {
 			listMedias += Bdd.listMedias.get(i) + "\n";
-		
+			i++;
+		}
 		return listMedias;
 	}
 

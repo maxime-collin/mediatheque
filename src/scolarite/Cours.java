@@ -103,7 +103,7 @@ public class Cours {
 		
 		res += "cycle : " + cycle.getNom() + "\n";
 		res += "matiere : " + matiere.getNom() + "\n";
-		res += "enseignant" + prof.getNom() + "\n";
+		res += "enseignant : " + prof.getNom() + "\n";
 		
 		res += "etudiants : ";
 		for (int i = 0; i < etudiants.size(); i++)

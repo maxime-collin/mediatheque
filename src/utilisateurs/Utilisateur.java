@@ -27,6 +27,9 @@ public abstract class Utilisateur {
 		nbEmpruntMax = nbEM;
 		nbEmpruntNonCommente = 0;
 		nbEmpruntEnCours = 0;
+		
+		cours = new ArrayList<scolarite.Cours>();
+		emprunts = new ArrayList<emprunt.Emprunt>();
 	}
 	
 	public ArrayList<scolarite.Cours> getCours() {
@@ -220,7 +223,7 @@ public abstract class Utilisateur {
 		
 		res += "nbEmpruntMax : " + getNbEmpruntMax() + "\n";
 		res += "nbEmpruntEnCours : " + getNbEmpruntEnCours() + "\n";
-		res += "nbEmpruntNonCommente" + getNbEmpruntNonCommente() + "\n";
+		res += "nbEmpruntNonCommente : " + getNbEmpruntNonCommente() + "\n";
 		
 		return res;
 	}

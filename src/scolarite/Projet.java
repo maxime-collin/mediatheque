@@ -25,6 +25,8 @@ public class Projet {
 		description = d;
 		dateDebut = dd;
 		dateFin = df;
+		
+		etudiants = new ArrayList<utilisateurs.Etudiant>();
 	}
 
 	public Stage getStage() {

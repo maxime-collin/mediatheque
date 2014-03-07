@@ -59,7 +59,8 @@ public class ControleurUser {
 			}
 			
 			// si oui on supprime l'enseignant
-			if (found == true) {
+			if (found) {
+				System.out.println(Bdd.listEnseignants.get(i));
 				desinscrireUserAllCours(Bdd.listEnseignants.get(i));
 				Bdd.listEnseignants.remove(i);
 				return true;
@@ -118,12 +119,16 @@ public class ControleurUser {
 		String listUsers = "";
 		
 		int i = 0;
-		while (i < Bdd.listEnseignants.size())
+		while (i < Bdd.listEnseignants.size()) {
 			listUsers += Bdd.listEnseignants.get(i) + "\n";
+			i++;
+		}
 		
 		i = 0;
-		while (i < Bdd.listEtudiants.size())
+		while (i < Bdd.listEtudiants.size()) {
 			listUsers += Bdd.listEtudiants.get(i) + "\n";
+			i++;
+		}
 		
 		return listUsers;
 	}
